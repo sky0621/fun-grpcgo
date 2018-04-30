@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+/* SearchRequest represents a search query, with pagination options to
+ * indicate which results to include in the response. */
+
+message SearchRequest {
+    string query = 1;
+    int32 page_number = 2;  // Which page number do we want?
+    int32 result_per_page = 3;  // Number of results to return per page.
+    double doubleVal = 4;
+    float floatVal = 5;
+    int64 int64Val = 6;
+    uint32 uint32Val = 7;
+    uint64 uint64Val = 8;
+    sint32 sint32Val = 9;
+    sint64 sint64Val = 10;
+    fixed32 fixed32Val = 11;
+    fixed64 fixed64Val = 12;
+    sfixed32 sfixed32Val = 13;
+    sfixed64 sfixed64Val = 14;
+    bool boolVal = 15;
+    bytes bytesVal = 16;
+    enum Corpus {
+        UNIVERSAL = 0;
+        WEB = 1;
+        IMAGES = 2;
+        LOCAL = 3;
+        NEWS = 4;
+        PRODUCTS = 5;
+        VIDEO = 6;
+    }
+    Corpus corpus = 17;
+}
+
